@@ -1,162 +1,183 @@
-// Данные отзывов (можно оставить те же)
-const reviewsData = [
+const reviews = [
     {
-        id: 1,
-        name: "Алина Смаилова",
-        score: "8.0",
-        details: "Writing: 7.5 | Speaking: 8.5",
-        text: "Курс JUZ40 (Edvance) дал мне четкую структуру. На реальном экзамене я использовала шаблоны из Writing Module, и это сэкономило кучу времени. Speaking практиковали каждый урок, поэтому страха перед экзаменатором не было вообще.",
-        img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        name: "Алина С.",
+        score: "IELTS 8.0",
+        quote: "Я проходил 3 месяца но проделал жесткий прогресс с 6.0 до 7.0. Учились оч интенсивно но эффективно, постоянно делали дз, учили формат экзамена, все лайфхаки к нему и тд. \n\nВ итоге пришел на экзамен 100% готовым. Спасибо за обучение!",
+        img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80"
     },
     {
-        id: 2,
-        name: "Данияр Алиев",
-        score: "7.5",
-        details: "Listening: 8.5 | Reading: 8.0",
-        text: "Я пришел с уровнем Intermediate и целью 6.5, но методика Model 1 работает чудесно. Особенно помогли разборы ловушек в Listening. Платформа удобная, домашку проверяют быстро и дают детальный фидбек.",
-        img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        name: "Данияр А.",
+        score: "IELTS 7.5",
+        quote: "Курс прям объемный и мне это понравилось. Была от этого нагрузка постоянная но по итогу научился многому. \n\nМне лично помогли разные методики  которые давали, такие как skimming, scanning  прям разбирали все и эффективно мог пременять потом",
+        img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80"
     },
     {
-        id: 3,
-        name: "Камила Нургали",
-        score: "8.5",
-        details: "Academic Module | Поступление в США",
-        text: "Самое сильное в курсе — это Mock Tests. Они точь-в-точь как настоящий экзамен. Когда я пришла на реальный IELTS, у меня было ощущение дежавю. Я знала каждый тип вопроса и тайминг. Результат превзошел ожидания!",
-        img: "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-    },
-    {
-        id: 4,
-        name: "Санжар К.",
-        score: "7.0",
-        details: "Срок подготовки: 1 месяц",
-        text: "У меня было очень мало времени. Индивидуальный тариф позволил сфокусироваться только на моих слабых местах — эссе и грамматике. Ментор буквально за руку довел меня до нужного балла для магистратуры.",
-        img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        name: "Камила Н.",
+        score: "IELTS 8.5",
+        quote: "Курс был очень полезный, полностью окупился результатом. Материал был очень полезный помогло на самом эказмене. \n\nНапример давали списки слов и они  много встерчались на самом экзамене. Тютор реально старался, давала много практических задач на уроках и как дз. \n\nОбъяснгили все типы вопросов в каждой части на самом эказамене был такой же точно формат как и давали на уроках. Все классно!!",
+        img: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=150&q=80"
     }
 ];
 
-const reviewsTabsContainer = document.getElementById('reviewsTabs');
-const reviewBody = document.getElementById('reviewBody');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
+document.addEventListener('DOMContentLoaded', () => {
+    
+    /* === 1. Анимации при скролле (Fade In) === */
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+    };
 
-let currentIndex = 0;
-let isAnimating = false; // Защита от быстрых кликов
-
-function initReviews() {
-    // Создаем табы
-    reviewsData.forEach((review, index) => {
-        const tab = document.createElement('div');
-        tab.classList.add('review-tab');
-        if (index === 0) tab.classList.add('active');
-        
-        tab.innerHTML = `<img src="${review.img}" alt="${review.name}">`;
-        
-        tab.addEventListener('click', () => {
-            if (currentIndex !== index && !isAnimating) {
-                changeReview(index);
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
             }
         });
-        
-        reviewsTabsContainer.appendChild(tab);
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+
+    /* === 2. Мобильное меню (Бургер) === */
+    const burger = document.getElementById('burger');
+    const navMenu = document.getElementById('navMenu');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    function toggleMenu() {
+        burger.classList.toggle('toggle');
+        navMenu.classList.toggle('nav-active');
+    }
+
+    if(burger) {
+        burger.addEventListener('click', toggleMenu);
+    }
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if(navMenu.classList.contains('nav-active')) {
+                toggleMenu();
+            }
+        });
     });
 
-    // Отрисовываем первый слайд сразу
-    renderContent(0);
-}
+    /* === 3. Логика Отзывов (Табы) === */
+    let currentReview = 0;
+    const reviewContent = document.getElementById('reviewContent');
+    const tabsContainer = document.getElementById('reviewsTabs');
+    
+    // Создание табов
+    if (tabsContainer) {
+        reviews.forEach((review, index) => {
+            const tab = document.createElement('div');
+            tab.className = `review-tab ${index === 0 ? 'active' : ''}`;
+            tab.innerHTML = `<img src="${review.img}" alt="${review.name}">`;
+            tab.addEventListener('click', () => loadReview(index));
+            tabsContainer.appendChild(tab);
+        });
+    }
 
-// Функция для плавной смены слайда
-function changeReview(index) {
-    if (isAnimating) return;
-    isAnimating = true;
-
-    const contentItem = document.querySelector('.review-item');
-    contentItem.classList.add('hidden'); // Запускаем анимацию исчезновения
-
-    // Ждем окончания анимации исчезновения (400ms как в CSS)
-    setTimeout(() => {
-        currentIndex = index;
-        renderContent(currentIndex);
-        updateActiveTab(currentIndex);
+    function loadReview(index) {
+        currentReview = index;
         
-        // Небольшая задержка перед появлением, чтобы браузер успел отрисовать новый DOM
-        requestAnimationFrame(() => {
-            const newItem = document.querySelector('.review-item');
-            newItem.classList.remove('hidden'); // Запускаем анимацию появления
+        document.querySelectorAll('.review-tab').forEach((t, i) => {
+            t.classList.toggle('active', i === index);
+        });
+
+        if(reviewContent) {
+            reviewContent.style.opacity = '0';
             
             setTimeout(() => {
-                isAnimating = false;
-            }, 400); // Ждем окончания анимации появления
-        });
-    }, 400);
-}
+                reviewContent.innerHTML = `
+                    <div class="review-item">
+                        <img src="${reviews[index].img}" alt="${reviews[index].name}" class="review-avatar-large">
+                        <div>
+                            <div class="review-quote">${reviews[index].quote}</div>
+                            <div class="score-badge">${reviews[index].score}</div>
+                            <h4 style="margin-top:10px;">${reviews[index].name}</h4>
+                        </div>
+                    </div>
+                `;
+                reviewContent.style.opacity = '1';
+            }, 200);
+        }
+    }
 
-function renderContent(index) {
-    const data = reviewsData[index];
-    // Обрати внимание: мы сразу создаем элемент с классом hidden, если это не первая загрузка
-    const hiddenClass = isAnimating ? 'hidden' : ''; 
+    // Инициализация первого отзыва
+    if(reviewContent) loadReview(0);
+
+    // Кнопки отзывов
+    const prevReviewBtn = document.getElementById('prevReview');
+    const nextReviewBtn = document.getElementById('nextReview');
+
+    if (prevReviewBtn) {
+        prevReviewBtn.addEventListener('click', () => {
+            let newIndex = currentReview - 1;
+            if (newIndex < 0) newIndex = reviews.length - 1;
+            loadReview(newIndex);
+        });
+    }
+
+    if (nextReviewBtn) {
+        nextReviewBtn.addEventListener('click', () => {
+            let newIndex = currentReview + 1;
+            if (newIndex >= reviews.length) newIndex = 0;
+            loadReview(newIndex);
+        });
+    }
+
+    /* === 4. ОБНОВЛЕННАЯ Логика слайдера Тарифов (Pricing) === */
+    /* Используем scrollBy, чтобы не конфликтовать со CSS-свайпом */
+    const pricingContainer = document.getElementById('pricingContainer');
+    const priceSlideLeft = document.getElementById('priceSlideLeft');
+    const priceSlideRight = document.getElementById('priceSlideRight');
     
-    reviewBody.innerHTML = `
-        <div class="review-item ${hiddenClass}">
-            <div class="review-image-wrapper">
-                <img src="${data.img}" alt="${data.name}" class="main-photo">
-                <div class="play-btn"><i class="fas fa-play"></i></div>
-            </div>
-            <div class="review-text-content">
-                <div class="review-header">
-                    <h3>${data.name}</h3>
-                    <span class="ielts-badge">IELTS ${data.score}</span>
-                </div>
-                <p class="student-detail">${data.details}</p>
-                <p class="review-quote">"${data.text}"</p>
-                <span class="read-more">Толығырақ оқу</span>
-            </div>
-        </div>
-    `;
-}
+    if(pricingContainer && priceSlideLeft && priceSlideRight) {
+        
+        // Получаем ширину карточки динамически
+        const getPriceScrollAmount = () => {
+            const card = pricingContainer.querySelector('.pricing-card');
+            return card ? card.offsetWidth + 20 : 350; // +20 на gap
+        };
 
-function updateActiveTab(index) {
-    const tabs = document.querySelectorAll('.review-tab');
-    tabs.forEach(tab => tab.classList.remove('active'));
-    tabs[index].classList.add('active');
-}
-
-// Listeners
-prevBtn.addEventListener('click', () => {
-    if(!isAnimating) {
-        let newIndex = currentIndex - 1;
-        if (newIndex < 0) newIndex = reviewsData.length - 1;
-        changeReview(newIndex);
-    }
-});
-
-nextBtn.addEventListener('click', () => {
-    if(!isAnimating) {
-        let newIndex = currentIndex + 1;
-        if (newIndex >= reviewsData.length) newIndex = 0;
-        changeReview(newIndex);
-    }
-});
-
-document.addEventListener('DOMContentLoaded', initReviews);
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    // Логика для слайдера тарифов
-    const container = document.getElementById('pricingContainer');
-    const leftBtn = document.getElementById('slideLeft');
-    const rightBtn = document.getElementById('slideRight');
-
-    if (container && leftBtn && rightBtn) {
-        rightBtn.addEventListener('click', () => {
-            // Листаем вправо на ширину карточки + отступ
-            const scrollAmount = container.querySelector('.pricing-card').offsetWidth + 15;
-            container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        priceSlideLeft.addEventListener('click', () => {
+            pricingContainer.scrollBy({
+                left: -getPriceScrollAmount(),
+                behavior: 'smooth'
+            });
         });
 
-        leftBtn.addEventListener('click', () => {
-            // Листаем влево
-            const scrollAmount = container.querySelector('.pricing-card').offsetWidth + 15;
-            container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        priceSlideRight.addEventListener('click', () => {
+            pricingContainer.scrollBy({
+                left: getPriceScrollAmount(),
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    /* === 5. Слайдер Программы (Curriculum) === */
+    const curriculumGrid = document.getElementById('curriculumGrid');
+    const currLeftBtn = document.getElementById('currSlideLeft');
+    const currRightBtn = document.getElementById('currSlideRight');
+
+    if (curriculumGrid && currLeftBtn && currRightBtn) {
+        // Функция прокрутки на ширину карточки + отступ
+        const getCurrScrollAmount = () => {
+            const card = curriculumGrid.querySelector('.course-card');
+            return card ? card.offsetWidth + 20 : 300; 
+        };
+
+        currLeftBtn.addEventListener('click', () => {
+            curriculumGrid.scrollBy({
+                left: -getCurrScrollAmount(),
+                behavior: 'smooth'
+            });
+        });
+
+        currRightBtn.addEventListener('click', () => {
+            curriculumGrid.scrollBy({
+                left: getCurrScrollAmount(),
+                behavior: 'smooth'
+            });
         });
     }
 });
