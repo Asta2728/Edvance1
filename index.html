@@ -4,23 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edvance | Курсы IELTS</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <link rel="stylesheet" href="style.css">
+
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=70">
 </head>
 <body>
 
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
             <div class="logo">Edvance<span>.</span></div>
-            <ul class="nav-links">
-                <li><a href="#hero">Главная</a></li>
-                <li><a href="#curriculum">Программа</a></li>
-                <li><a href="#pricing">Тарифы</a></li>
-                <li><a href="#reviews">Отзывы</a></li>
+            <ul class="nav-links" id="navMenu">
+                <li><a href="#hero" class="nav-link">Главная</a></li>
+                <li><a href="#curriculum" class="nav-link">Программа</a></li>
+                <li><a href="#pricing" class="nav-link">Тарифы</a></li>
+                <li><a href="#reviews" class="nav-link">Отзывы</a></li>
             </ul>
             <a href="#contact" class="btn-nav">Пробный урок</a>
-            <div class="burger">
+            
+            <div class="burger" id="burger">
                 <div class="line1"></div>
                 <div class="line2"></div>
                 <div class="line3"></div>
@@ -28,220 +33,232 @@
         </div>
     </nav>
 
-    <section id="hero" class="hero">
+    <section id="hero" class="hero fade-in-up" style="background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=70');">
         <div class="hero-overlay"></div>
         <div class="container hero-content">
             <h1>Твой результат IELTS начинается в Edvance</h1>
-            <p>Уникальная методика Model 1, интенсивная практика и гарантия качества.</p>
+            <p>Уникальная методика, интенсивная практика, репетиторы 8.0+</p>
             <div class="hero-buttons">
                 <a href="#pricing" class="btn btn-primary">Выбрать тариф</a>
                 <a href="#contact" class="btn btn-outline">Бесплатный урок</a>
             </div>
             
-<div class="stats">
-    <div class="stat-item">
-        <div class="stat-icon"><i class="fas fa-book-reader"></i></div>
-        <div class="stat-text">
-            <h3>36</h3>
-            <p>Уроков в курсе</p>
-        </div>
-    </div>
-
-    <div class="stat-item">
-        <div class="stat-icon"><i class="fas fa-users"></i></div>
-        <div class="stat-text">
-            <h3>5</h3>
-            <p>Человек в группе</p>
-        </div>
-    </div>
-
-    <div class="stat-item">
-        <div class="stat-icon"><i class="fas fa-bullseye"></i></div>
-        <div class="stat-text">
-            <h3>8.0</h3>
-            <p>Цель курса</p>
-        </div>
-    </div>
-</div>
-    </section>
-
-    <section id="curriculum" class="section-padding">
-        <div class="container">
-            <h2 class="section-title">Система обучения <span>Model 1</span></h2>
-            <p class="section-subtitle">Мы разбили подготовку на идеальные блоки для максимального прогресса.</p>
-            
-
-
-<div class="courses-grid">
-    <div class="course-card">
-        <div class="course-img">
-            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Listening">
-            <span class="badge">Аудирование</span>
-        </div>
-        <div class="course-info">
-            <h3>Listening Module</h3>
-            <p class="duration"><i class="fas fa-headphones"></i> 7 Уроков</p>
-            <p class="description">Понимаем акценты, учимся слышать детали и ловушки экзаменаторов.</p>
-            <ul class="course-features">
-                <li><i class="fas fa-check"></i> Практика разных акцентов</li>
-                <li><i class="fas fa-check"></i> Заполнение пропусков и карт</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="course-card">
-        <div class="course-img">
-            <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Reading">
-            <span class="badge">База</span>
-        </div>
-        <div class="course-info">
-            <h3>Reading Module</h3>
-            <p class="duration"><i class="fas fa-book-open"></i> 7 Уроков</p>
-            <p class="description">Разбор всех типов вопросов. Техники Skimming & Scanning для быстрого поиска ответов.</p>
-            <ul class="course-features">
-                <li><i class="fas fa-check"></i> Работа со сложными текстами</li>
-                <li><i class="fas fa-check"></i> Тайм-менеджмент</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="course-card">
-        <div class="course-img">
-            <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Writing">
-            <span class="badge">Важно</span>
-        </div>
-        <div class="course-info">
-            <h3>Writing Module</h3>
-            <p class="duration"><i class="fas fa-pen-fancy"></i> 7 Уроков</p>
-            <p class="description">Структура эссе на 8.0. Task 1 (графики) и Task 2 (аргументация).</p>
-            <ul class="course-features">
-                <li><i class="fas fa-check"></i> Академический вокабуляр</li>
-                <li><i class="fas fa-check"></i> Грамматические конструкции</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="course-card">
-        <div class="course-img">
-            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Speaking">
-            <span class="badge">Практика</span>
-        </div>
-        <div class="course-info">
-            <h3>Speaking Module</h3>
-            <p class="duration"><i class="fas fa-comments"></i> 7 Уроков</p>
-            <p class="description">Снимаем языковой барьер. Учимся отвечать развернуто и идиоматично.</p>
-            <ul class="course-features">
-                <li><i class="fas fa-check"></i> Part 1, 2, 3 детально</li>
-                <li><i class="fas fa-check"></i> Работа над произношением</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="course-card highlight-card">
-        <div class="course-img">
-            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Exam">
-            <span class="badge">Финал</span>
-        </div>
-        <div class="course-info">
-            <h3>Review & Mock Tests</h3>
-            <p class="duration"><i class="fas fa-flag-checkered"></i> 4 Review + 4 Tests</p>
-            <p class="description">Полная симуляция экзамена и закрепление материала перед сдачей.</p>
-            <ul class="course-features">
-                <li><i class="fas fa-check"></i> 4 урока повторения</li>
-                <li><i class="fas fa-check"></i> 4 пробных экзамена (Mock)</li>
-                <li><i class="fas fa-check"></i> Разбор ошибок</li>
-            </ul>
-        </div>
-    </div>
-</div>
-    </section>
-<section id="reviews" class="section-padding">
-        <div class="container">
-            <h2 class="section-title">Результаты наших <span>студентов</span></h2>
-            <div class="reviews-wrapper">
-                
-                <div class="reviews-tabs" id="reviewsTabs">
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-book-reader"></i></div>
+                    <div class="stat-text">
+                        <h3>36</h3>
+                        <p>Уроков в курсе</p>
                     </div>
+                </div>
 
-                <div class="review-content-card">
-                    <div class="review-body" id="reviewBody">
-                        </div>
-                    
-                    <div class="review-navigation">
-                        <button class="nav-arrow prev-btn" id="prevBtn"><i class="fas fa-arrow-left"></i></button>
-                        <button class="nav-arrow next-btn" id="nextBtn"><i class="fas fa-arrow-right"></i></button>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-users"></i></div>
+                    <div class="stat-text">
+                        <h3>5</h3>
+                        <p>Человек в группе</p>
+                    </div>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-bullseye"></i></div>
+                    <div class="stat-text">
+                        <h3>8.0</h3>
+                        <p>Цель курса</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="pricing" class="section-padding bg-light">
-    <div class="container">
-        <h2 class="section-title">Стоимость обучения</h2>
-        
-        <div class="pricing-table" id="pricingContainer">
+
+    <section id="curriculum" class="section-padding fade-in-up">
+        <div class="container">
+            <h2 class="section-title">Система обучения <span>Edvance</span></h2>
+            <p class="section-subtitle">Мы разбили подготовку на идеальные блоки для максимального прогресса.</p>
             
-            <div class="pricing-card popular">
-                <div class="popular-badge">ХИТ ПРОДАЖ</div>
-                <h3>IELTS Group</h3>
-                <div class="price">40 000 ₸</div>
-                <p class="period">за курс (36 уроков)</p>
-                <hr>
-                <ul>
-                    <li><i class="fas fa-users"></i> Мини-группа (до 5 чел.)</li>
-                    <li><i class="fas fa-check-circle"></i> Полная программа Model 1</li>
-                    <li><i class="fas fa-check-circle"></i> Проверка Writing и Speaking</li>
-                    <li><i class="fas fa-check-circle"></i> 4 Mock Test включено</li>
-                </ul>
-                <a href="#contact" class="btn btn-primary">Записаться в группу</a>
+            <div class="courses-grid" id="curriculumGrid">
+                <div class="course-card">
+                    <div class="course-img">
+                        <img 
+                            src="https://images.unsplash.com/photo-1587614298171-a223667e51c2?auto=format&fit=crop&w=600&q=60" 
+                            alt="Listening"
+                            loading="lazy"
+                            width="600"
+                            height="400"
+                        >
+                        <span class="badge">Listening</span>
+                    </div>
+                    <div class="course-info">
+                        <h3>Listening</h3>
+                        <p class="duration"><i class="fas fa-headphones"></i> 9 Уроков</p>
+                        <p class="description">Учимся слышать ключевые детали, распознавать перефраз и уверенно проходить ловушки экзамена.</p>
+                        <ul class="course-features">
+                            <li><i class="fas fa-check"></i> Практика разных акцентов</li>
+                            <li><i class="fas fa-check"></i> Стратегии для всех форматов заданий</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-img">
+                        <img 
+                            src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" 
+                            alt="Reading"
+                            loading="lazy"
+                            width="600"
+                            height="400"
+                        >
+                        <span class="badge">Reading</span>
+                    </div>
+                    <div class="course-info">
+                        <h3>Reading</h3>
+                        <p class="duration"><i class="fas fa-book-open"></i> 9 Уроков</p>
+                        <p class="description">Разбор всех типов вопросов. Техники для быстрого поиска ответов и контроля времени.</p>
+                        <ul class="course-features">
+                            <li><i class="fas fa-check"></i> Работа со сложными текстами</li>
+                            <li><i class="fas fa-check"></i> Тайм-менеджмент</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-img">
+                        <img 
+                            src="https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" 
+                            alt="Writing"
+                            loading="lazy"
+                            width="600"
+                            height="400"
+                        >
+                        <span class="badge">Writing</span>
+                    </div>
+                    <div class="course-info">
+                        <h3>Writing</h3>
+                        <p class="duration"><i class="fas fa-pen-fancy"></i> 9 Уроков</p>
+                        <p class="description">Правильная структура эссе и логика аргументации: Task 1 (графики) и Task 2 (эссе).</p>
+                        <ul class="course-features">
+                            <li><i class="fas fa-check"></i> Академический вокабуляр</li>
+                            <li><i class="fas fa-check"></i> Грамматические конструкции</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-img">
+                        <img 
+                            src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=60" 
+                            alt="Speaking"
+                            loading="lazy"
+                            width="600"
+                            height="400"
+                        >
+                        <span class="badge">Speaking</span>
+                    </div>
+                    <div class="course-info">
+                        <h3>Speaking</h3>
+                        <p class="duration"><i class="fas fa-comments"></i> 9 Уроков</p>
+                        <p class="description">Снимаем языковой барьер и учимся отвечать уверенно, развернуто и естественно.</p>
+                        <ul class="course-features">
+                            <li><i class="fas fa-check"></i> Part 1, 2, 3 детально</li>
+                            <li><i class="fas fa-check"></i> Работа над произношением</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
-            <div class="pricing-card">
-                <h3>Individual</h3>
-                <div class="price">95 000 ₸</div>
-                <p class="period">за курс (36 уроков)</p>
-                <hr>
-                <ul>
-                    <li><i class="fas fa-user"></i> Один на один с ментором</li>
-                    <li><i class="fas fa-check-circle"></i> Гибкое расписание</li>
-                    <li><i class="fas fa-check-circle"></i> Детальный разбор ошибок</li>
-                    <li><i class="fas fa-check-circle"></i> Гарантия результата</li>
-                </ul>
-                <a href="#contact" class="btn btn-outline-dark">Выбрать индивидуально</a>
+            <div class="curriculum-controls">
+                <button id="currSlideLeft" class="control-btn"><i class="fas fa-chevron-left"></i></button>
+                <button id="currSlideRight" class="control-btn"><i class="fas fa-chevron-right"></i></button>
             </div>
-
         </div>
+    </section>
 
-        <div class="carousel-controls">
-            <button id="slideLeft" class="control-btn"><i class="fas fa-chevron-left"></i></button>
-            <button id="slideRight" class="control-btn"><i class="fas fa-chevron-right"></i></button>
+    <section id="reviews" class="section-padding fade-in-up">
+        <div class="container">
+            <h2 class="section-title">Результаты наших <span>студентов</span></h2>
+            <div class="reviews-wrapper">
+                <div class="reviews-tabs" id="reviewsTabs"></div>
+                <div class="review-content-card">
+                    <div class="review-body" id="reviewContent"></div>
+                    <div class="review-navigation">
+                        <button class="nav-arrow prev-btn" id="prevReview"><i class="fas fa-arrow-left"></i></button>
+                        <button class="nav-arrow next-btn" id="nextReview"><i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-    </div>
-</section>
+    <section id="pricing" class="section-padding bg-light fade-in-up">
+        <div class="container">
+            <h2 class="section-title">Стоимость обучения</h2>
+            
+            <div class="pricing-wrapper">
+                <div class="pricing-container" id="pricingContainer">
+                    <div class="pricing-card popular">
+                        <div class="popular-badge">ХИТ ПРОДАЖ</div>
+                        <h3>IELTS Group</h3>
+                        <div class="price">40 000 ₸</div>
+                        <p class="period">за курс (36 уроков)</p>
+                        <hr>
+                        <ul>
+                            <li><i class="fas fa-users"></i> Мини-группа (до 5 чел.)</li>
+                            <li><i class="fas fa-check-circle"></i> Полная программа</li>
+                            <li><i class="fas fa-check-circle"></i> Проверка Writing и Speaking</li>
+                            <li><i class="fas fa-check-circle"></i> Mock tests включены</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-primary">Записаться в группу</a>
+                    </div>
 
-    <section id="contact" class="cta-section">
+                    <div class="pricing-card">
+                        <h3>Individual</h3>
+                        <div class="price">95 000 ₸</div>
+                        <p class="period">за курс (36 уроков)</p>
+                        <hr>
+                        <ul>
+                            <li><i class="fas fa-user"></i> Один на один с ментором</li>
+                            <li><i class="fas fa-check-circle"></i> Гибкое расписание</li>
+                            <li><i class="fas fa-check-circle"></i> Детальный разбор ошибок</li>
+                            <li><i class="fas fa-check-circle"></i> Гарантия результата</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-outline-dark">Выбрать индивидуально</a>
+                    </div>
+                </div>
+                
+                <div class="pricing-controls">
+                    <button id="priceSlideLeft" class="control-btn"><i class="fas fa-chevron-left"></i></button>
+                    <button id="priceSlideRight" class="control-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="cta-section fade-in-up">
         <div class="container cta-container">
             <div class="cta-text">
                 <h2>Первый урок бесплатно!</h2>
                 <p>Познакомься с платформой, пройди тестирование уровня и получи план подготовки.</p>
             </div>
-            <form class="contact-form" id="leadForm">
+           
+           <form class="contact-form" id="leadForm" method="POST">
                 <h3>Заявка на пробный урок</h3>
-                <input type="text" placeholder="Ваше имя" required>
-                <input type="tel" placeholder="Номер телефона" required>
+                
+                <input type="text" name="name" placeholder="Ваше имя" required>
+                <input type="tel" name="phone" placeholder="Номер телефона" required>
+
+                <input type="hidden" name="_captcha" value="false">
+
                 <div class="form-buttons">
-<button type="submit" class="btn btn-dark full-width-btn">
-    Получить бесплатно
-</button>
-
-<div class="form-divider">
-    <span>ИЛИ</span>
-</div>
-
-<a href="https://wa.me/77771234567" target="_blank" class="btn btn-whatsapp-outline">
-    <i class="fab fa-whatsapp"></i> Написать нам в WhatsApp
-</a>
+                    <button type="submit" class="btn btn-dark full-width-btn" id="submitBtn">
+                        Получить бесплатно
+                    </button>
+                    <div class="form-divider">
+                        <span>ИЛИ</span>
+                    </div>
+                    <a href="https://wa.me/77776723887" target="_blank" class="btn btn-whatsapp-outline">
+                        <i class="fab fa-whatsapp"></i> Написать нам в WhatsApp
+                    </a>
+                </div>
                 <p class="privacy-note">Нажимая кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a></p>
             </form>
         </div>
@@ -251,35 +268,35 @@
         <div class="container footer-content">
             <div class="footer-col">
                 <h3>Edvance<span>.</span></h3>
-                <p>Твой проводник в мир зарубежного образования.</p>
+                <p>Твой проводник в мир образования.</p>
             </div>
             <div class="footer-col">
                 <h4>Контакты</h4>
-                <p>+7 (777) 123-45-67</p>
-                <p>info@edvance.kz</p>
-            </div>
-            <div class="footer-col">
-                <h4>Документы</h4>
-                <ul class="footer-links">
-                    <li><a href="#">Публичная оферта</a></li>
-                    <li><a href="#">Политика конфиденциальности</a></li>
-                </ul>
+                <p>+7 (777) 672-38-87</p>
             </div>
             <div class="footer-col">
                 <h4>Мы в соцсетях</h4>
                 <div class="social-icons">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-telegram"></i></a>
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/edvance.ielts" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+
+                    <a href="https://www.tiktok.com/@edvance.ielts" target="_blank">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+
+                    <a href="https://wa.me/77776723887" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
                 </div>
             </div>
         </div>
         <div class="copyright">
-            <p>&copy; 2024 Edvance Education. Все права защищены.</p>
+            <p>&copy; 2025 Edvance Education. Все права защищены.</p>
         </div>
     </footer>
 
-    <a href="https://wa.me/77771234567" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/77776723887" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
